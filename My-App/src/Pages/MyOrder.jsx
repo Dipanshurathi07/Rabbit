@@ -7,6 +7,7 @@ const MyOrder = () => {
   const { orders } = useSelector((state) => state.orders);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const safeOrders = Array.isArray(orders) ? orders : [];
 
   useEffect(() => {
     dispatch(fetchUserOrders());
@@ -31,8 +32,8 @@ const MyOrder = () => {
           </thead>
 
           <tbody>
-            {orders?.length > 0 ? (
-              orders.map((item, idx) => (
+            {safeOrders.length > 0 ? (
+              safeOrders.map((item, idx) => (
                 <tr
                   key={idx}
                   onClick={() => navigate(`/order/${item._id}`)}

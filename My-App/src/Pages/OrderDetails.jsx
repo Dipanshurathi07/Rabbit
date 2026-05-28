@@ -68,7 +68,7 @@ const OrderDetails = () => {
     </thead>
 
     <tbody>
-      { orderDetails?.orderItems?.length > 0 ? (
+      { Array.isArray(orderDetails?.orderItems) && orderDetails.orderItems.length > 0 ? (
         orderDetails.orderItems.map((item, idx) => (
           <tr key={idx} className="border-b">
             {/* Name */}

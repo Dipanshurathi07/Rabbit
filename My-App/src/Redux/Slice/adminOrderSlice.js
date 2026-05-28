@@ -69,7 +69,7 @@ const adminOrderSlice = createSlice({
       })
       .addCase(fetchAdminOrders.fulfilled, (state, action) => {
         state.loading = false;
-        state.order = action.payload;
+        state.order = Array.isArray(action.payload) ? action.payload : [];
       })
       .addCase(fetchAdminOrders.rejected, (state, action) => {
         state.loading = false;

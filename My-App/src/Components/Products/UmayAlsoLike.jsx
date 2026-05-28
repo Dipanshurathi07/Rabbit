@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 const UmayAlsoLike = ({similarProduct, loading, error}) => {
+  const safeSimilar = Array.isArray(similarProduct) ? similarProduct : [];
   if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
-  if (!similarProduct || similarProduct.length === 0) return <p className="text-center">No similar products found</p>;
+  if (safeSimilar.length === 0) return <p className="text-center">No similar products found</p>;
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
-      {similarProduct.map((product,index)=>(
+      {safeSimilar.map((product,index)=>(
         <Link key={index} to={`/product/${product._id}`}>
           <div className="bg-white p-4 rounded-lg">
             <div className="w-full h-96 mb-4">

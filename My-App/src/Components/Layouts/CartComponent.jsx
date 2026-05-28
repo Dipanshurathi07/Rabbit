@@ -61,12 +61,14 @@ const handleDec = (item) => {
     guestId
   }));
 };
-  if(!items || items.length===0){
+  const safeItems = Array.isArray(items) ? items : [];
+
+  if(safeItems.length === 0){
     return <h1 className='text-center'>No item in cart..</h1>
   }
   return (
     <div className="flex flex-col z-50 p-5">
-      {items.map((item, idx) => (
+      {safeItems.map((item, idx) => (
         <div
           key={idx}
           className="flex gap-4 py-4"

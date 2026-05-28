@@ -1,12 +1,27 @@
 import { createAsyncThunk ,createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const loadCartFromStorage = ()=>{
+const normalizeCart = (data) => {
+  if (!data || typeof data !== "object") {
+    return { products: [], totalPrice: 0 };
+  }
+  if (Array.isArray(data)) {
+    return { products: data, totalPrice: 0 };
+  }
+  return {
+    products: Array.isArray(data.products) ? data.products : [],
+    totalPrice: typeof data.totalPrice === "number" ? data.totalPrice : 0,
+    guestId: data.guestId || undefined,
+    userId: data.userId || undefined,
+  };
+};
+
+const loadCartFromStorage = () => {
   const storedCart = localStorage.getItem("cart");
-  return storedCart ? JSON.parse(storedCart) : {products : []}
-} 
-const saveCartToStorage = (cart)=>{
-  localStorage.setItem("cart",JSON.stringify(cart));
+  return storedCart ? normalizeCart(JSON.parse(storedCart)) : { products: [], totalPrice: 0 };
+};
+const saveCartToStorage = (cart) => {
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 //fetch cart for a user or guest
 export const fetchCart = createAsyncThunk("cart/fetchCart",async ({userId,guestId},{rejectWithValue})=>{
@@ -97,7 +112,7 @@ const cartSlice = createSlice({
  })
  .addCase(fetchCart.fulfilled,(state,action)=>{
  state.loading=false;
- state.cart = action.payload;
+ state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
 })
  .addCase(fetchCart.rejected,(state,action)=>{
@@ -109,7 +124,7 @@ const cartSlice = createSlice({
  state.loading = true;
  })
  .addCase(addToCart.fulfilled,(state,action)=>{
- state.cart = action.payload;
+ state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(addToCart.rejected,(state,action)=>{
@@ -121,7 +136,7 @@ const cartSlice = createSlice({
  state.loading = true;
  })
  .addCase(updateQuantity.fulfilled,(state,action)=>{
- state.cart = action.payload;
+ state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(updateQuantity.rejected,(state,action)=>{
@@ -133,7 +148,7 @@ const cartSlice = createSlice({
  state.loading = true;
  })
  .addCase(deleteItem.fulfilled,(state,action)=>{
- state.cart = action.payload;
+ state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(deleteItem.rejected,(state,action)=>{
@@ -147,7 +162,7 @@ const cartSlice = createSlice({
  state.loading = true;
  })
  .addCase(mergeCart.fulfilled,(state,action)=>{
- state.cart = action.payload;
+ state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(mergeCart.rejected,(state,action)=>{

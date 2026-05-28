@@ -187,7 +187,7 @@ useEffect(() => {
   </div>
 </div>
     <div ref={scrollRef}   onScroll={updateScrollButtons} className="container mx-auto overflow-x-scroll flex space-x-6 relative pt-4">
-      {newArrivals.map((product)=>(
+      {(Array.isArray(newArrivals) ? newArrivals : []).map((product)=>(
        <div key={product._id} className="min-w-full sm:min-w-[50%] lg:min-w-[30%] relative">
   <img
     src={product.images[0]?.url}

@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const TopWearForWomens = ({topWear,loading,error}) => {
-{loading && <h1 className="text-center">Loading...</h1>}
+  const safeTopWear = Array.isArray(topWear) ? topWear : [];
+  if (loading) return <h1 className="text-center">Loading...</h1>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
-  if (!topWear || topWear.length === 0) return <p className="text-center">No products availableee</p>;
+  if (safeTopWear.length === 0) return <p className="text-center">No products availableee</p>;
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
-      {topWear.map((product,index)=>(
+      {safeTopWear.map((product,index)=>(
         <Link key={index} to={`/product/${product._id}`}>
           <div className="bg-white p-4 rounded-lg">
             <div className="w-full h-96 mb-4">

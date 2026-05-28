@@ -11,7 +11,9 @@ const AdminHomePage = () => {
     dispatch(fetchAdminOrders());
     dispatch(fetchProducts());
   },[dispatch])
-  const totalSales = order.reduce((acc, curr) => acc + curr.totalPrice, 0);
+  const safeAdminOrders = Array.isArray(order) ? order : [];
+  const safeProducts = Array.isArray(products) ? products : [];
+  const totalSales = safeAdminOrders.reduce((acc, curr) => acc + (curr.totalPrice || 0), 0);
   return (
     <div className='max-w-7xl mx-auto p-6'>
       <h1 className='font-semibold text-3xl mb-5'>Admin Dashboard</h1>
@@ -22,12 +24,12 @@ const AdminHomePage = () => {
         </div>
         <div className="rounded-md border shadow py-4 px-5">
           <h2 className='font-semibold text-xl'>Total Orders</h2>
-          <h2 className='text-xl'>{order.length}</h2>
+          <h2 className='text-xl'>{safeAdminOrders.length}</h2>
           <p className='text-blue-500'>Manage Orders</p>
         </div>
         <div className="rounded-md border shadow py-4 px-5">
           <h2 className='font-semibold text-xl'>Total Products</h2>
-          <h2 className='text-xl'>{products.length}</h2>
+          <h2 className='text-xl'>{safeProducts.length}</h2>
            <p className='text-blue-500'>Manage Products</p>
         </div>
       </div>
@@ -50,8 +52,8 @@ const AdminHomePage = () => {
       </tr>
     </thead>
     <tbody>
-          {order.length > 0 ? (
-            order.map((item, idx) => (
+          {safeAdminOrders.length > 0 ? (
+            safeAdminOrders.map((item, idx) => (
               <tr key={idx} className="border-b">
                 <td className="px-4 py-3">{item._id}</td>
                 <td className="px-4 py-3">

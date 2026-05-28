@@ -5,6 +5,7 @@ import { fetchAdminOrders, updateAdminOrders } from "../Redux/Slice/adminOrderSl
 const OrderManagement = () => {
   const dispatch = useDispatch();
   const { order } = useSelector((state) => state.adminOrders);
+  const safeOrders = Array.isArray(order) ? order : [];
 
   useEffect(() => {
     dispatch(fetchAdminOrders());
@@ -43,8 +44,8 @@ const OrderManagement = () => {
           </thead>
 
           <tbody>
-            {order?.length > 0 ? (
-              order.map((order) => (
+            {safeOrders.length > 0 ? (
+              safeOrders.map((order) => (
                 <tr key={order._id} className="border-b hover:bg-gray-50">
                   
                   {/* Order ID */}

@@ -73,6 +73,10 @@ const BestSaller = ({productId}) => {
   const [selectColor, setSelectColor] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(false);
   
+  const safeImages = Array.isArray(selectedProduct?.images) ? selectedProduct.images : [];
+  const safeColors = Array.isArray(selectedProduct?.colors) ? selectedProduct.colors : [];
+  const safeSizes = Array.isArray(selectedProduct?.sizes) ? selectedProduct.sizes : [];
+
   const productFetchId =  productId || id;
   useEffect(()=>{
     if(productFetchId){
@@ -133,7 +137,7 @@ const BestSaller = ({productId}) => {
             />
 
             <div className="flex gap-3 mt-3">
-              {selectedProduct.images?.map((item, idx) => (
+              {safeImages.map((item, idx) => (
                 <img
                   key={idx}
                   src={item.url}
@@ -156,7 +160,7 @@ const BestSaller = ({productId}) => {
             {/* COLORS */}
             <h3 className="mt-4">Color:</h3>
             <div className="flex gap-2">
-              {selectedProduct.colors?.map((color, i) => (
+              {safeColors.map((color, i) => (
                 <div
                   key={i}
                   onClick={() => setSelectColor(color)}
@@ -171,7 +175,7 @@ const BestSaller = ({productId}) => {
             {/* SIZES */}
             <h3 className="mt-4">Size:</h3>
             <div className="flex gap-2">
-              {selectedProduct.sizes?.map((size, i) => (
+              {safeSizes.map((size, i) => (
                 <button
                   key={i}
                   onClick={() => setSelectSize(size)}

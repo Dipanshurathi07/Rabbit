@@ -205,7 +205,7 @@ if(error) return <p>Error : {error}</p>
 
   {/* Products */}
   <div className="space-y-4 border-b pb-4 mb-4">
-    {cart.products.map((product, idx) => (
+    {(Array.isArray(cart.products) ? cart.products : []).map((product, idx) => (
       <div
         key={idx}
         className="flex items-start justify-between gap-4"

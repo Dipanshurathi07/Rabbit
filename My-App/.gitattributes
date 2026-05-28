@@ -1,0 +1,12 @@
+# Normalize line endings
+* text=auto
+
+# Ensure env files use LF in the repo
+*.env text eol=lf
+
+# Binary files should be left alone
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

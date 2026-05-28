@@ -57,7 +57,7 @@ const OrderConfirmation = () => {
             </div>
           </div>
           <div className="space-y-4 mb-8">
-            {checkOut.orderItems.map((item, idx) => (
+            {(Array.isArray(checkOut.orderItems) ? checkOut.orderItems : []).map((item, idx) => (
               <div
                 key={idx}
                 className="flex items-start justify-between "

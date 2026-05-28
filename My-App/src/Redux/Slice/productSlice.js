@@ -120,8 +120,8 @@ const productSlice = createSlice({
     })
     .addCase(fetchProductByFilter.fulfilled,(state,action)=>{
       state.loading = false;
-      state.error = null,
-      state.products = action.payload;
+      state.error = null;
+      state.products = Array.isArray(action.payload) ? action.payload : [];
     })
     .addCase(fetchProductByFilter.rejected,(state,action)=>{
       state.loading = false;
@@ -160,8 +160,8 @@ const productSlice = createSlice({
     })
     .addCase(fatchProductById.fulfilled,(state,action)=>{
       state.loading = false;
-      state.error = null,
-      state.selectedProduct = action.payload;
+      state.error = null;
+      state.selectedProduct = action.payload && !Array.isArray(action.payload) ? action.payload : null;
     })
     .addCase(fatchProductById.rejected,(state,action)=>{
       state.loading = false;

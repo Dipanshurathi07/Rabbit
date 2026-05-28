@@ -91,7 +91,7 @@ const adminSlice = createSlice({
       })
       .addCase(fetchAllUsers.fulfilled, (state, action) => {
         state.loading = false;
-        state.users = action.payload; 
+        state.users = Array.isArray(action.payload) ? action.payload : [];
       })
       .addCase(fetchAllUsers.rejected, (state, action) => {
         state.loading = false;
@@ -104,7 +104,9 @@ const adminSlice = createSlice({
       })
       .addCase(addUser.fulfilled, (state, action) => {
         state.loading = false;
-        state.users.push = action.payload; 
+        if (action.payload) {
+          state.users.push(action.payload);
+        }
       })
       .addCase(addUser.rejected, (state, action) => {
         state.loading = false;
