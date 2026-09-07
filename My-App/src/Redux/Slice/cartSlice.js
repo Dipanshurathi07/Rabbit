@@ -32,8 +32,11 @@ const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/cart/`
 return response.data;
   }
   catch(error){
+    if (error.response?.status === 404) {
+      return { products: [], totalPrice: 0, guestId, userId };
+    }
     console.log(error);
-    return rejectWithValue(error.response.data)
+    return rejectWithValue(error.response?.data || { message: "Failed to fetch cart" })
   }
 })
 export const addToCart = createAsyncThunk("cart/addToCart",async({productId,quantity,size,color,guestId,userId},{rejectWithValue})=>{
@@ -79,7 +82,7 @@ export const mergeCart = createAsyncThunk("cart/mergeCart",async({userId,guestId
     const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/cart/merge`,{guestId,userId},
         {
         headers : {
-          Authorization : `Bearer ${JSON.parse(localStorage.getItem("userToken"))}`
+          Authorization : `Bearer ${localStorage.getItem("userToken")}`
         }
       }
     )

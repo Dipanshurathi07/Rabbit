@@ -16,21 +16,28 @@ const orderAdmin = require("./routes/orderAdminRoute.js");
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:5174",
   "http://localhost:3000",
-  "https://rabbit-psi.vercel.app"
+  "https://rabbit-psi.vercel.app",
+  "https://rabbit-3zab.onrender.com",
+  "https://rabbit-gpul.vercel.app/"
 ];
 
 app.use(express.json());
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || /^https:\/\/.*\.vercel\.app$/.test(origin)) {
+    if (!origin || allowedOrigins.includes(origin) || /^http:\/\/localhost:\d+$/.test(origin) || /^https:\/\/.*\.vercel\.app$/.test(origin)) {
       callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
+      return;
     }
+
+    callback(null, true);
   },
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+app.options(/.*/, cors());
 
 app.get("/", (req, res) => {
   res.send("Welcome");

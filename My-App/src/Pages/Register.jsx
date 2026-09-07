@@ -69,7 +69,7 @@ const Register = () => {
               <label htmlFor="email" className=" text-sm font-semibold mb-1">
                 Email
               </label>
-              <input type="text" id="email" placeholder="Email" value={email} onChange={handleEmail} className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-black"/>
+              <input type="email" id="email" placeholder="Email" value={email} onChange={handleEmail} className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-black"/>
             </div>
 
             <div>

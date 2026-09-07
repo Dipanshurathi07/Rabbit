@@ -49,7 +49,7 @@ const Login = () => {
           <h1 className="text-xl font-bold text-center mb-3">
             Hey there!👋
           </h1>
-          <p className="text-center mb-3">Enter your username and password to Login</p>
+          <p className="text-center mb-3">Enter your email and password to login</p>
           <form className="space-y-3" onSubmit={handleSubmit}>
             
             <div>
@@ -66,7 +66,7 @@ const Login = () => {
               <input type="password" id="password" placeholder="Password" value={password} onChange={handlePassword} className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-black"/>
             </div>
             <button className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition ">
-              {loading ? "loading..." : "SignUp"}
+              {loading ? "Logging in..." : "Login"}
             </button>
 
             <p className="text-center text-sm text-gray-600">

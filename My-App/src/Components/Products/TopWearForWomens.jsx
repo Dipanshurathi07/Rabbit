@@ -8,14 +8,17 @@ const TopWearForWomens = ({topWear,loading,error}) => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
-      {safeTopWear.map((product,index)=>(
-        <Link key={index} to={`/product/${product._id}`}>
+      {safeTopWear.map((product)=>(
+        <Link key={product._id} to={`/product/${product._id}`}>
           <div className="bg-white p-4 rounded-lg">
             <div className="w-full h-96 mb-4">
               <img src={product.images[0]?.url} alt={product.images[0]?.altText} className="w-full h-full object-cover rounded-lg"></img>
             </div>
             <div>
               <h1 className="">{product.name}</h1>
+              <p className="text-xs uppercase tracking-wide text-gray-500">
+                {product.gender?.[0]} / {product.category}
+              </p>
               <p className="text-gray-600">$ {product.price}</p>
             </div>
 

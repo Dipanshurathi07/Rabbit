@@ -16,30 +16,23 @@ const FilterBar = () => {
       maxPrice:100
     }
   );
- const categories = [
-  "topwear",
-  "bottomwear",
-  "ethnic",
-  "western",
-  "sportswear"
-];
+ const categories = ["Top Wear", "Bottom Wear"];
 
  const genders = [
-  "men",
-  "women",
-  "kids"
+  "Men",
+  "Women"
 ];
 
  const colors = [
-  "black",
-  "white",
-  "red",
-  "blue",
-  "green",
-  "yellow",
-  "pink",
-  "brown",
-  "gray"
+  "Black",
+  "White",
+  "Red",
+  "Blue",
+  "Green",
+  "Yellow",
+  "Pink",
+  "Brown",
+  "Gray"
 ];
 
  const sizes = [
@@ -52,21 +45,35 @@ const FilterBar = () => {
 ];
 
  const materials = [
-  "cotton",
-  "linen",
-  "silk",
-  "denim",
-  "wool",
-  "polyester"
+  "Cotton",
+  "Linen",
+  "Silk",
+  "Denim",
+  "Wool",
+  "Polyester"
 ];
 
  const brands = [
-  "nike",
-  "adidas",
-  "puma",
-  "zara",
-  "h&m",
-  "levi's"
+  "Urban Threads",
+  "Modern Fit",
+  "Street Style",
+  "Beach Breeze",
+  "Urban Chic",
+  "Polo Classics",
+  "Street Vibes",
+  "Heritage Wear",
+  "Winter Basics",
+  "Everyday Comfort",
+  "ActiveWear",
+  "UrbanStyle",
+  "ChillZone",
+  "DenimCo",
+  "CasualLook",
+  "SportX",
+  "ExecutiveStyle",
+  "StreetWear",
+  "LoungeWear",
+  "ElegantStyle"
 ];
 function handleFilter(e){
   const {name,value,type,checked} = e.target
@@ -131,7 +138,7 @@ setPriceRange([0,params.maxPrice || 100]);
 
     {/* CATEGORY */}
     <div className="mb-6">
-      <p className="font-medium mb-2">Category</p>
+      <p className="font-medium mb-2">Clothing Type</p>
       {categories.map((c) => (
         <label key={c} className="flex items-center mb-1">
           <input type="radio" name="category" value={c} onChange={handleFilter} checked={filters.category===c}/>

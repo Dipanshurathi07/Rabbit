@@ -19,7 +19,7 @@ export const updatePayment = createAsyncThunk("checkout/updatePayment",async({pa
   try {
     const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/checkout/${id}/pay`,{paymentStatus,paymentDetails},{
     headers : {
-    Authorization : `Bearer ${JSON.parse(localStorage.getItem("userToken"))}`
+    Authorization : `Bearer ${localStorage.getItem("userToken")}`
     }
   })
   return response.data;

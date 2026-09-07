@@ -91,34 +91,87 @@ router.get("/", async (req, res) => {
 
     const queryObj = {};
     let sort = {};
-    if (collection && collection.toLowerCase() !== "all") {
-      if (collection.toLowerCase() === "men") {
+
+    const normalizeTokens = (value) =>
+      String(value)
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
+
+    const categoryMap = {
+      "top wear": "Top Wear",
+      "topwear": "Top Wear",
+      "bottom wear": "Bottom Wear",
+      "bottomwear": "Bottom Wear",
+      men: "Men",
+      women: "Women",
+      ethnic: "Ethnic",
+      western: "Western",
+      "sports wear": "Sports Wear",
+      sportswear: "Sports Wear"
+    };
+
+    const genderMap = {
+      men: "Men",
+      women: "Women"
+    };
+
+    const materialMap = {
+      cotton: "Cotton",
+      linen: "Linen",
+      silk: "Silk",
+      denim: "Denim",
+      wool: "Wool",
+      polyester: "Polyester"
+    };
+
+    if (collection && String(collection).toLowerCase() !== "all") {
+      const normalizedCollection = String(collection).trim().toLowerCase();
+      if (normalizedCollection === "men") {
         queryObj.gender = "Men";
-      } else if (collection.toLowerCase() === "women") {
+      } else if (normalizedCollection === "women") {
         queryObj.gender = "Women";
-      } else if (collection.toLowerCase() === "topwear") {
+      } else if (normalizedCollection === "topwear" || normalizedCollection === "top wear") {
         queryObj.category = "Top Wear";
-      } else if (collection.toLowerCase() === "bottomwear") {
+      } else if (normalizedCollection === "bottomwear" || normalizedCollection === "bottom wear") {
         queryObj.category = "Bottom Wear";
       } else {
         queryObj.collection = collection;
       }
     }
-    if (category && category.toLowerCase() !== "all") {
-      queryObj.category = category;
+
+    if (category && String(category).toLowerCase() !== "all") {
+      const key = String(category).trim().toLowerCase();
+      const mappedCategory = categoryMap[key];
+      if (mappedCategory) {
+        if (mappedCategory === "Men" || mappedCategory === "Women") {
+          queryObj.gender = mappedCategory;
+        } else {
+          queryObj.category = mappedCategory;
+        }
+      }
     }
+
     if (gender) {
-      queryObj.gender = gender;
+      const mappedGender = genderMap[String(gender).trim().toLowerCase()];
+      if (mappedGender) {
+        queryObj.gender = mappedGender;
+      }
     }
+
     if (color) {
-      queryObj.colors = { $in: color.split(",") };
+      queryObj.colors = { $in: normalizeTokens(color).map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()) };
     }
+
     if (size) {
-      queryObj.sizes = { $in: size.split(",") };
+      queryObj.sizes = { $in: normalizeTokens(size).map((item) => item.toUpperCase()) };
     }
 
     if (material) {
-      queryObj.material = { $in: material.split(",") };
+      const values = normalizeTokens(material).map((item) => materialMap[item.toLowerCase()] || item);
+      if (values.length) {
+        queryObj.material = { $in: values };
+      }
     }
 
     if (minPrice || maxPrice) {
@@ -132,7 +185,10 @@ router.get("/", async (req, res) => {
     }
 
     if (brand) {
-      queryObj.brand = { $in: brand.split(",") };
+      const values = normalizeTokens(brand).map((item) => item.trim());
+      if (values.length) {
+        queryObj.brand = { $in: values.map((value) => new RegExp(value, "i")) };
+      }
     }
 
     if (search) {
@@ -157,6 +213,7 @@ router.get("/", async (req, res) => {
           break;
       }
     }
+
     const products = await Product
       .find(queryObj)
       .sort(sort)
@@ -172,14 +229,12 @@ router.get("/best-seller", async (req, res) => {
   try {
     const bestSeller = await Product.findOne().sort({ rating: -1 });
     if (bestSeller) {
-      res.json(bestSeller)
-    } else {
-      res.status(404).json({ Message: "No best seller found" })
+      return res.status(200).json(bestSeller);
     }
+    return res.status(200).json(null);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ Message: "Server Error" })
-
+    res.status(500).json({ Message: "Server Error" });
   }
 })
 
