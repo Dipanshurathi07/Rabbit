@@ -13,8 +13,24 @@ const order = require("./routes/orderRoutes.js");
 const Subscriber = require("./routes/subscriber.js");
 const adminRouter = require("./routes/adminRoutes.js");
 const orderAdmin = require("./routes/orderAdminRoute.js");
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://rabbit-psi.vercel.app"
+];
+
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin) || /^https:\/\/.*\.vercel\.app$/.test(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
 
 app.get("/", (req, res) => {
   res.send("Welcome");
