@@ -7,7 +7,8 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seeder.js",
-    "sync-images": "node syncProductImages.js"
+    "sync-images": "node syncProductImages.js",
+    "replace-products": "node replaceProducts.js"
   },
   "keywords": [],
   "author": "",
