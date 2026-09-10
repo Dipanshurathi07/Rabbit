@@ -54,7 +54,7 @@ const Register = () => {
         <div className="bg-white w-full max-w-md p-8 rounded-lg shadow-2xl opacity-90">
           
           <h2 className="text-2xl font-semibold text-center mb-2">
-            Rabbit
+            Rabit
           </h2>
           <h1 className="text-xl font-bold text-center mb-3">
             Hey there!👋

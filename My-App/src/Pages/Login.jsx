@@ -48,7 +48,7 @@ const Login = () => {
       <div className="absolute inset-4 flex items-center justify-center">
         <div className="bg-white w-full max-w-md p-8 rounded-lg shadow-2xl opacity-90">
           
-          <h2 className="text-xl font-semibold text-center mb-2">Rabbit</h2>
+          <h2 className="text-xl font-semibold text-center mb-2">Rabit</h2>
           <h1 className="text-xl font-bold text-center mb-3">
             Hey there!👋
           </h1>

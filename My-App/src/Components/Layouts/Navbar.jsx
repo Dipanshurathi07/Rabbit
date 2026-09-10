@@ -38,7 +38,7 @@ const Navbar = () => {
         {/* Logo */}
         <div>
           <Link to="/" className="text-2xl font-extrabold tracking-wide">
-            Rabbi<span className="text-orange-600">t</span>
+            Rabi<span className="text-orange-600">t</span>
           </Link>
         </div>
 

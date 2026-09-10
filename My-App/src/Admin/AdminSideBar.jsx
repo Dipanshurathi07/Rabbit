@@ -13,7 +13,7 @@ const AdminSideBar = () => {
   return (
     <div className='p-6'>
       <div className='mb-6'>
-        <NavLink to="/admin" className="text-2xl font-medium">Rabbit</NavLink>
+        <NavLink to="/admin" className="text-2xl font-medium">Rabit</NavLink>
       </div>
       <h2 className='text-xl font-medium mb-6 text-center'>Admin Dashboard</h2>
       <nav className='flex flex-col space-y-5'>
