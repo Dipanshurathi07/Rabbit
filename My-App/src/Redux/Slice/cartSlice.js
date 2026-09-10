@@ -115,7 +115,16 @@ const cartSlice = createSlice({
  })
  .addCase(fetchCart.fulfilled,(state,action)=>{
  state.loading=false;
- state.cart = normalizeCart(action.payload);
+ const fetchedCart = normalizeCart(action.payload);
+ const currentCartHasItems = state.cart.products.length > 0;
+ const fetchedCartHasItems = fetchedCart.products.length > 0;
+
+ if (!fetchedCartHasItems && currentCartHasItems) {
+   saveCartToStorage(state.cart);
+   return;
+ }
+
+ state.cart = fetchedCart;
  saveCartToStorage(state.cart);
 })
  .addCase(fetchCart.rejected,(state,action)=>{
@@ -127,36 +136,42 @@ const cartSlice = createSlice({
  state.loading = true;
  })
  .addCase(addToCart.fulfilled,(state,action)=>{
+ state.loading=false;
+ state.error=null;
  state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(addToCart.rejected,(state,action)=>{
  state.loading=false;
- state.error = action.payload?.message;
+ state.error = action.payload?.message || "Failed to add item to cart";
  })
   // UPDATE
   .addCase(updateQuantity.pending,(state)=>{
  state.loading = true;
  })
  .addCase(updateQuantity.fulfilled,(state,action)=>{
+ state.loading=false;
+ state.error=null;
  state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(updateQuantity.rejected,(state,action)=>{
  state.loading=false;
- state.error = action.payload?.message;
+ state.error = action.payload?.message || "Failed to update cart";
  })
  // DELETE
  .addCase(deleteItem.pending,(state)=>{
  state.loading = true;
  })
  .addCase(deleteItem.fulfilled,(state,action)=>{
+ state.loading=false;
+ state.error=null;
  state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(deleteItem.rejected,(state,action)=>{
  state.loading=false;
- state.error = action.payload?.message;
+ state.error = action.payload?.message || "Failed to remove item from cart";
  })
 
 
@@ -165,12 +180,14 @@ const cartSlice = createSlice({
  state.loading = true;
  })
  .addCase(mergeCart.fulfilled,(state,action)=>{
+ state.loading=false;
+ state.error=null;
  state.cart = normalizeCart(action.payload);
  saveCartToStorage(state.cart);
  })
  .addCase(mergeCart.rejected,(state,action)=>{
  state.loading=false;
- state.error = action.payload?.message;
+ state.error = action.payload?.message || "Failed to merge cart";
  });
   }
 })

@@ -191,10 +191,11 @@ router.get("/", async (req, res) => {
       }
     }
 
-    if (search) {
+    if (search && String(search).trim()) {
+      const escapedSearch = String(search).trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       queryObj.$or = [
-        { name: { $regex: search, $options: "i" } },
-        { description: { $regex: search, $options: "i" } }
+        { name: { $regex: escapedSearch, $options: "i" } },
+        { description: { $regex: escapedSearch, $options: "i" } }
       ];
     }
 

@@ -27,6 +27,7 @@ import axios from 'axios';
 const CheckOut = () => {
   const dispatch = useDispatch();
   const {cart,loading,error}=useSelector((state)=>state.cart);
+  const {loading: checkoutLoading, error: checkoutError}=useSelector((state)=>state.checkout);
   const {user}=useSelector((state)=>state.auth);
   const {checkOut}=useSelector((state)=>state.checkout)
   const navigate = useNavigate();
@@ -136,8 +137,8 @@ const handlePaymentSuccess =async (details)=>{
     
 //   }
 // }
-if(loading) return <p>Loading...</p>
-if(error) return <p>Error : {error}</p>
+if(loading || checkoutLoading) return <p>Loading...</p>
+if(error || checkoutError) return <p>Error : {error || checkoutError}</p>
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto py-10 px-6">
       <div className="bg-white rounded-lg p-6">

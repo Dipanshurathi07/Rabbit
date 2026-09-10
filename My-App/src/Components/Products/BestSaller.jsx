@@ -66,7 +66,8 @@ const BestSaller = ({productId}) => {
   const { topWearProducts, selectedProduct, similarProducts, loading, error } = useSelector(
   (state) => state.product
 );
-  const {guestId,userId} = useSelector((state)=>state.auth);
+  const {guestId,user} = useSelector((state)=>state.auth);
+  const userId = user?._id;
   const [mainImage, setMainImage] = useState("");
   const [count, setCount] = useState(1);
   const [selectSize, setSelectSize] = useState("");
@@ -108,7 +109,7 @@ const BestSaller = ({productId}) => {
       size : selectSize,
       color : selectColor,
       guestId,
-      userId : userId?._id
+      userId
     })).then(()=>{
       toast.success("Add to Cart Successfully",{
         duration:1000

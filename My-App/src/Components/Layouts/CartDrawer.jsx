@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import CartComponent from './CartComponent'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchCart } from '../../Redux/Slice/cartSlice'
 const CartDrawer = ({cartOpen,handleCart}) => {
-  const {user,guestId}=useSelector((state)=>state.auth);
-  const userId = user ? user._id : null;
-  const dispatch = useDispatch();
+  const {user}=useSelector((state)=>state.auth);
   const {cart,loading,error}=useSelector((state)=>state.cart);
   const navigate=useNavigate();
   function navigatePage(){
@@ -17,12 +14,6 @@ const CartDrawer = ({cartOpen,handleCart}) => {
        navigate("/checkout");
     }
   }
- useEffect(()=>{
-  dispatch(fetchCart({
-    userId,
-    guestId
-  }))
-},[dispatch, userId, guestId]);
   return (
     <div className={`fixed top-0 right-0 w-3/4 sm:w-1/2 md:w-1/4 h-full bg-white shadow-lg transform transition-all duration-300 flex flex-col z-50 ${cartOpen? "translate-x-0" : "translate-x-full"}`}>
       <div className="flex justify-end p-4">

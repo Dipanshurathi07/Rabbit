@@ -61,7 +61,7 @@ const checkoutSlice = createSlice({
     })
      .addCase(createCheckOut.rejected,(state,action)=>{
       state.loading = false;
-      state.error = action.payload.message || "No checkout Created";
+      state.error = action.payload?.message || action.error.message || "No checkout Created";
     })
       .addCase(updatePayment.pending,(state)=>{
       state.loading=true;
@@ -73,7 +73,7 @@ const checkoutSlice = createSlice({
     })
      .addCase(updatePayment.rejected,(state,action)=>{
       state.loading = false;
-      state.error = action.payload.message || "No payment updated";
+      state.error = action.payload?.message || action.error.message || "No payment updated";
     })
       .addCase(finalizePayment.pending,(state)=>{
       state.loading=true;
@@ -85,7 +85,7 @@ const checkoutSlice = createSlice({
     })
      .addCase(finalizePayment.rejected,(state,action)=>{
       state.loading = false;
-      state.error = action.payload.message || "No payment finalize";
+      state.error = action.payload?.message || action.error.message || "No payment finalize";
     })
   }
 })

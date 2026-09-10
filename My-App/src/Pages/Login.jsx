@@ -12,7 +12,7 @@ const Login = () => {
   const dispatch =useDispatch();
   const location = useLocation();
   const {cart}=useSelector((state)=>state.cart);
-  const {user,guestId,loading}=useSelector((state)=>state.auth)
+  const {user,guestId,loading,error}=useSelector((state)=>state.auth)
   const userId = user ? user._id : "";
   const redirect = new URLSearchParams(location.search).get("redirect") || "/";
   const isCheckoutRedirect = redirect.includes("checkout");
@@ -32,11 +32,14 @@ const Login = () => {
   function handlePassword(e){
     setPassword(e.target.value);
   }
-  function handleSubmit(e){
-   e.preventDefault();
-   dispatch(loginUser({email,password}))
-    setEmail("");
-    setPassword("");
+  async function handleSubmit(e){
+    e.preventDefault();
+    const result = await dispatch(loginUser({email,password}));
+
+    if (loginUser.fulfilled.match(result)) {
+      setEmail("");
+      setPassword("");
+    }
   }
   return (
     <div className="container mx-auto relative h-[700px]">
@@ -50,22 +53,23 @@ const Login = () => {
             Hey there!👋
           </h1>
           <p className="text-center mb-3">Enter your email and password to login</p>
+          {error && <p className="rounded bg-red-100 px-3 py-2 text-sm text-red-700" role="alert">{error}</p>}
           <form className="space-y-3" onSubmit={handleSubmit}>
             
             <div>
               <label htmlFor="email" className=" text-sm font-semibold mb-1">
                 Email
               </label>
-              <input type="email" id="email" placeholder="Email" value={email} onChange={handleEmail} className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-black"/>
+              <input type="email" id="email" placeholder="Email" value={email} onChange={handleEmail} required autoComplete="email" className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-black"/>
             </div>
 
             <div>
               <label htmlFor="password" className="text-sm font-semibold mb-1">
                 Password
               </label>
-              <input type="password" id="password" placeholder="Password" value={password} onChange={handlePassword} className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-black"/>
+              <input type="password" id="password" placeholder="Password" value={password} onChange={handlePassword} required autoComplete="current-password" className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-black"/>
             </div>
-            <button className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition ">
+            <button type="submit" disabled={loading} className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition disabled:cursor-not-allowed disabled:opacity-60">
               {loading ? "Logging in..." : "Login"}
             </button>
 

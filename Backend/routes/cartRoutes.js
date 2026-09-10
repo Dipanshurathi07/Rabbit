@@ -265,7 +265,7 @@ router.post("/merge", async (req, res) => {
 
     await Cart.findOneAndDelete({ guestId });
 
-    res.status(200).json({ message: "Cart merged successfully", userCart });
+    res.status(200).json(userCart);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
