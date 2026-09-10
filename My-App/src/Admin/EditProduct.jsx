@@ -1,8 +1,13 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { updateProducts } from "../Redux/Slice/adminProductSlice";
 
 const EditProduct = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
   const [productData, setProductData] = useState({
     name: "",
@@ -22,13 +27,37 @@ const EditProduct = () => {
     ],
   });
 
+  useEffect(() => {
+    const loadProduct = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/${id}`
+        );
+        const product = response.data;
+        setProductData({
+          ...product,
+          sizes: Array.isArray(product.sizes) ? product.sizes : [],
+          colors: Array.isArray(product.colors) ? product.colors : [],
+          gender: Array.isArray(product.gender) ? product.gender[0] || "" : product.gender || "",
+          images: Array.isArray(product.images) ? product.images : [],
+        });
+      } catch (error) {
+        console.error("Failed to load product:", error);
+      }
+    };
+
+    if (id) loadProduct();
+  }, [id]);
+
   /* SIMPLE INPUT HANDLER */
   const handleInput = (e) => {
     const { name, value } = e.target;
-      setProductData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
+    setProductData((prev) => ({
+      ...prev,
+      [name]: name === "sizes" || name === "colors"
+        ? value.split(",").map((item) => item.trim()).filter(Boolean)
+        : value,
+    }));
   };
 
   /* IMAGE UPLOAD */
@@ -36,9 +65,20 @@ const EditProduct = () => {
     const files = e.target.files;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/admin/products");
+    try {
+      await dispatch(updateProducts({
+        id,
+        productDetails: {
+          ...productData,
+          gender: productData.gender ? [productData.gender] : [],
+        },
+      })).unwrap();
+      navigate("/admin/products");
+    } catch (error) {
+      console.error("Failed to update product:", error);
+    }
   };
 
   return (

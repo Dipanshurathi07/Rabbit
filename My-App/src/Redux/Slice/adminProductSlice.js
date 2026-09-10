@@ -31,9 +31,9 @@ export const addProducts = createAsyncThunk("admin/addProducts",async(productDet
   return rejectWithValue(error.response?.data);
 }
 })
-export const updateProducts = createAsyncThunk("admin/updateProducts",async(id,productDetails,{rejectWithValue})=>{
+export const updateProducts = createAsyncThunk("admin/updateProducts",async({ id, productDetails },{rejectWithValue})=>{
   try{
-  const response  = axios.put( `${import.meta.env.VITE_BACKEND_URL}/api/admin/products/${id}`,productDetails,
+  const response  = await axios.put( `${import.meta.env.VITE_BACKEND_URL}/api/admin/products/${id}`,productDetails,
     {
           headers : {
             Authorization:`Bearer ${localStorage.getItem("userToken")}`
@@ -48,7 +48,7 @@ export const updateProducts = createAsyncThunk("admin/updateProducts",async(id,p
 })
 export const deleteProducts = createAsyncThunk("admin/deleteProducts",async(id,{rejectWithValue})=>{
   try{
-  const response  = axios.delete( `${import.meta.env.VITE_BACKEND_URL}/api/admin/products/${id}`,
+  await axios.delete( `${import.meta.env.VITE_BACKEND_URL}/api/admin/products/${id}`,
     {
           headers : {
             Authorization:`Bearer ${localStorage.getItem("userToken")}`

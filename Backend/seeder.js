@@ -1,4 +1,3 @@
-const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -6,8 +5,6 @@ const Product = require("./Models/Product.js");
 const User = require("./Models/User.js");
 const Cart = require("./Models/Cart.js");
 const products = require("./Data/products.js");
-
-mongoose.connect(process.env.MONGODB_URI);
 
 const classifyProduct = (product) => {
   const name = product.name.toLowerCase();
@@ -39,10 +36,15 @@ const classifyProduct = (product) => {
 
 const seedData = async () => {
   try {
-    await Product.deleteMany();
-    await User.deleteMany();
-    await Cart.deleteMany();
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log(`Connected to MongoDB: ${mongoose.connection.host}/${mongoose.connection.name}`);
 
+    const deletedProducts = await Product.deleteMany({});
+    const deletedUsers = await User.deleteMany({});
+    const deletedCarts = await Cart.deleteMany({});
+    console.log(`Deleted products: ${deletedProducts.deletedCount}`);
+    console.log(`Deleted users: ${deletedUsers.deletedCount}`);
+    console.log(`Deleted carts: ${deletedCarts.deletedCount}`);
     const createUser = await User.create({
       name: "John",
       email: "dipanshuchaudhary13@gmail.com",
@@ -57,11 +59,13 @@ const seedData = async () => {
       images: product.images
     }));
 
-    await Product.insertMany(sampleData);
-    process.exit();
+    const insertedProducts = await Product.insertMany(sampleData);
+    console.log(`Inserted products: ${insertedProducts.length}`);
   } catch (err) {
-    console.log(err);
-    process.exit(1);
+    console.error("Seeding failed:", err.message);
+    process.exitCode = 1;
+  } finally {
+    await mongoose.disconnect();
   }
 };
 

@@ -17,14 +17,14 @@ router.get("/",protect,admin,async(req,res)=>{
 
 router.delete("/:id",protect,admin,async(req,res)=>{
    try {
-      const product = await User.findById(req.params.id);
+      const product = await Product.findById(req.params.id);
       if (!product) {
         return res.status(404).json({
           message: "Product not found"
         });
       }
-      await Product.findOneAndDelete(product);
-      res.status(200).json({Message : "Successfully Deleted"})
+      await Product.findByIdAndDelete(req.params.id);
+      res.status(200).json({ message: "Product deleted successfully", id: req.params.id });
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Server Error" });

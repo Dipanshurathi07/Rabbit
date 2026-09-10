@@ -47,7 +47,8 @@ router.put("/:id", protect, admin, async (req, res, next) => {
       product.dimentions = dimentions || product.dimentions;
       product.weight = weight || product.weight;
       product.sku = sku || product.sku;
-      await product.save();
+      const updatedProduct = await product.save();
+      res.status(200).json(updatedProduct);
 
     } else {
       res.status(404).json({ Message: "Product not found" });
