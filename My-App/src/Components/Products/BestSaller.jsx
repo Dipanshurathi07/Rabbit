@@ -3,7 +3,7 @@ import { Toaster, toast } from "sonner";
 import UmayAlsoLike from "./UmayAlsoLike";
 import TopWearForWomens from "./TopWearForWomens";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fatchSimilarProducts, fatchProductById ,fetchTopWearProducts} from "../../Redux/Slice/productSlice";
 import { addToCart } from "../../Redux/Slice/cartSlice";
 
@@ -62,6 +62,7 @@ import { addToCart } from "../../Redux/Slice/cartSlice";
 
 const BestSaller = ({productId}) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
    const {id} = useParams();
   const { topWearProducts, selectedProduct, similarProducts, loading, error } = useSelector(
   (state) => state.product
@@ -74,11 +75,13 @@ const BestSaller = ({productId}) => {
   const [selectColor, setSelectColor] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(false);
   
-  const safeImages = Array.isArray(selectedProduct?.images) ? selectedProduct.images : [];
   const safeColors = Array.isArray(selectedProduct?.colors) ? selectedProduct.colors : [];
   const safeSizes = Array.isArray(selectedProduct?.sizes) ? selectedProduct.sizes : [];
 
   const productFetchId =  productId || id;
+  const productOptions = [selectedProduct, ...(Array.isArray(similarProducts) ? similarProducts : [])]
+    .filter(Boolean)
+    .slice(0, 3);
   useEffect(()=>{
     if(productFetchId){
       dispatch(fatchProductById(productFetchId))
@@ -91,9 +94,10 @@ const BestSaller = ({productId}) => {
     if (selectedProduct?.images?.length > 0) {
       setMainImage(selectedProduct.images[0].url);
     }
+    setCount(1);
+    setSelectSize("");
+    setSelectColor("");
   }, [selectedProduct]);
-
-  const handleImage = (url) => setMainImage(url);
 
   const HandleCart = () => {
     if (!selectColor || !selectSize) {
@@ -124,7 +128,7 @@ const BestSaller = ({productId}) => {
   if (!selectedProduct) return <h1 className="text-center">No Product Found</h1>;
   
   return (
-    <section className="p-6">
+    <section className="p-6" key={productFetchId}>
       <Toaster />
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
         <div className="flex flex-col md:flex-row gap-6">
@@ -134,18 +138,24 @@ const BestSaller = ({productId}) => {
             <img
               src={mainImage}
               alt="Main"
-              className="w-[400px] h-[400px] object-cover rounded-lg"
+              className="w-[400px] h-[400px] object-contain rounded-lg bg-gray-50"
             />
 
             <div className="flex gap-3 mt-3">
-              {safeImages.map((item, idx) => (
-                <img
-                  key={idx}
-                  src={item.url}
-                  alt={item.altText}
-                  onClick={() => handleImage(item.url)}
-                  className="w-16 h-16 cursor-pointer border"
-                />
+              {productOptions.map((product) => (
+                <button
+                  key={product._id}
+                  type="button"
+                  onClick={() => navigate(`/product/${product._id}`)}
+                  className={`w-20 border p-1 ${product._id === selectedProduct._id ? "border-black" : "border-gray-200"}`}
+                  title={`${product.name} - $${(product.discountPrice || product.price).toFixed(2)}`}
+                >
+                  <img
+                    src={product.images?.[0]?.url}
+                    alt={product.name}
+                    className="w-full h-16 object-contain bg-gray-50"
+                  />
+                </button>
               ))}
             </div>
           </div>
@@ -153,8 +163,10 @@ const BestSaller = ({productId}) => {
           {/* RIGHT DETAILS */}
           <div>
             <h1 className="text-2xl font-bold">{selectedProduct.name}</h1>
-            <p className="line-through">{selectedProduct.originalPrice}</p>
-            <p className="text-xl font-semibold">₹ {selectedProduct.price}</p>
+            {selectedProduct.discountPrice && selectedProduct.discountPrice < selectedProduct.price && (
+              <p className="line-through text-gray-500">$ {selectedProduct.price.toFixed(2)}</p>
+            )}
+            <p className="text-xl font-semibold">$ {(selectedProduct.discountPrice || selectedProduct.price).toFixed(2)}</p>
 
             <p className="mt-3">{selectedProduct.description}</p>
 
@@ -209,7 +221,7 @@ const BestSaller = ({productId}) => {
             {/* DETAILS */}
             <div className="mt-6">
               <p><b>Brand:</b> {selectedProduct.brand}</p>
-              <p><b>Material:</b> {selectedProduct.materail}</p>
+              <p><b>Material:</b> {selectedProduct.material || "Not specified"}</p>
             </div>
           </div>
         </div>

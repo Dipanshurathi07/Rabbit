@@ -5,6 +5,7 @@ const Product = require("./Models/Product.js");
 const User = require("./Models/User.js");
 const Cart = require("./Models/Cart.js");
 const products = require("./Data/products.js");
+const { getProductImages } = require("./utils/productImages.js");
 
 const classifyProduct = (product) => {
   const name = product.name.toLowerCase();
@@ -53,10 +54,10 @@ const seedData = async () => {
     });
 
     const userID = createUser._id;
-    const sampleData = products.map((product) => ({
+    const sampleData = products.map((product, index) => ({
       ...classifyProduct(product),
       user: userID,
-      images: product.images
+      images: getProductImages(product, index)
     }));
 
     const insertedProducts = await Product.insertMany(sampleData);

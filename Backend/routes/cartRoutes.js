@@ -28,6 +28,16 @@ router.get("/", async (req, res) => {
         userId: userId || undefined,
       });
     }
+    const refreshedItems = await Promise.all(cart.products.map(async (item) => {
+      const product = await Product.findById(item.productId).select("price discountPrice images");
+      if (!product) return item;
+      item.price = product.discountPrice || product.price;
+      item.image = product.images?.[0]?.url || item.image;
+      return item;
+    }));
+    cart.products = refreshedItems;
+    cart.totalPrice = refreshedItems.reduce((total, item) => total + Number(item.price || 0) * item.quantity, 0);
+    await cart.save();
     res.status(200).json(cart);
   } catch (error) {
     console.log(error);
@@ -54,6 +64,9 @@ router.post("/", async (req, res) => {
       if (productIndex > -1) { //exist
         //increase quantity
         cart.products[productIndex].quantity = (cart.products[productIndex].quantity || 0) + quantity;
+        const product = await Product.findById(productId).select("price discountPrice images");
+        cart.products[productIndex].price = product.discountPrice || product.price;
+        cart.products[productIndex].image = product.images?.[0]?.url || cart.products[productIndex].image;
       } else {
         //add new Product
         const product = await Product.findById(productId);
@@ -64,7 +77,7 @@ router.post("/", async (req, res) => {
             productId: product._id,
             name: product.name,
             image: product.images?.[0]?.url || "",
-            price: product.price,
+            price: product.discountPrice || product.price,
             color,
             size,
             quantity
@@ -86,14 +99,14 @@ router.post("/", async (req, res) => {
             productId: product._id,
             name: product.name,
             image: product.images?.[0]?.url || "",
-            price: product.price,
+            price: product.discountPrice || product.price,
             size,
             color,
             quantity
           }
         ],
 
-        totalPrice: product.price * quantity
+        totalPrice: (product.discountPrice || product.price) * quantity
       });
       await newcart.save();
 
@@ -132,7 +145,7 @@ router.put("/", async (req, res) => {
             quantity
           }
         ],
-        totalPrice: product.price * quantity
+        totalPrice: (product.discountPrice || product.price) * quantity
       });
       await newCart.save();
       return res.status(200).json(newCart);
@@ -164,7 +177,7 @@ router.put("/", async (req, res) => {
       productId: product._id,
       name: product.name,
       image: product.images?.[0]?.url || "",
-      price: product.price,
+      price: product.discountPrice || product.price,
       size,
       color,
       quantity

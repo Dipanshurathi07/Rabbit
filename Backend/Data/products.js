@@ -23,18 +23,18 @@ const products = [
     "collections": "Business Casual",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.5,
+    "numReviews": 12,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1984632/pexels-photo-1984632.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Classic Oxford Button-Down Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2096476/pexels-photo-2096476.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Classic Oxford Button-Down Shirt detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 12
+    ]
   },
   {
     "name": "Slim-Fit Stretch Shirt",
@@ -59,18 +59,18 @@ const products = [
     "collections": "Formal Wear",
     "material": "Cotton Blend",
     "gender": "Men",
+    "rating": 4.8,
+    "numReviews": 15,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/15835597/pexels-photo-15835597.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim-Fit Stretch Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/15835619/pexels-photo-15835619.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim-Fit Stretch Shirt detail view"
       }
-    ],
-    "rating": 4.8,
-    "numReviews": 15
+    ]
   },
   {
     "name": "Casual Denim Shirt",
@@ -95,18 +95,18 @@ const products = [
     "collections": "Casual Wear",
     "material": "Denim",
     "gender": "Men",
+    "rating": 4.6,
+    "numReviews": 8,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1170980/pexels-photo-1170980.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Casual Denim Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/3779453/pexels-photo-3779453.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Casual Denim Shirt detail view"
       }
-    ],
-    "rating": 4.6,
-    "numReviews": 8
+    ]
   },
   {
     "name": "Printed Resort Shirt",
@@ -130,18 +130,18 @@ const products = [
     "collections": "Vacation Wear",
     "material": "Viscose",
     "gender": "Men",
+    "rating": 4.4,
+    "numReviews": 10,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/3214813/pexels-photo-3214813.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Printed Resort Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1472761/pexels-photo-1472761.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Printed Resort Shirt detail view"
       }
-    ],
-    "rating": 4.4,
-    "numReviews": 10
+    ]
   },
   {
     "name": "Slim-Fit Easy-Iron Shirt",
@@ -165,18 +165,18 @@ const products = [
     "collections": "Business Wear",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 5,
+    "numReviews": 14,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/831993/pexels-photo-831993.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim-Fit Easy-Iron Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7593962/pexels-photo-7593962.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim-Fit Easy-Iron Shirt detail view"
       }
-    ],
-    "rating": 5,
-    "numReviews": 14
+    ]
   },
   {
     "name": "Polo T-Shirt with Ribbed Collar",
@@ -201,18 +201,18 @@ const products = [
     "collections": "Casual Wear",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.3,
+    "numReviews": 22,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/806626/pexels-photo-806626.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Polo T-Shirt with Ribbed Collar front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/935977/pexels-photo-935977.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Polo T-Shirt with Ribbed Collar detail view"
       }
-    ],
-    "rating": 4.3,
-    "numReviews": 22
+    ]
   },
   {
     "name": "Oversized Graphic T-Shirt",
@@ -236,18 +236,18 @@ const products = [
     "collections": "Streetwear",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.6,
+    "numReviews": 30,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Oversized Graphic T-Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/27046025/pexels-photo-27046025.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Oversized Graphic T-Shirt detail view"
       }
-    ],
-    "rating": 4.6,
-    "numReviews": 30
+    ]
   },
   {
     "name": "Regular-Fit Henley Shirt",
@@ -272,18 +272,18 @@ const products = [
     "collections": "Casual Wear",
     "material": "Cotton Blend",
     "gender": "Men",
+    "rating": 4.5,
+    "numReviews": 25,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2096476/pexels-photo-2096476.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Regular-Fit Henley Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1984632/pexels-photo-1984632.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Regular-Fit Henley Shirt detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 25
+    ]
   },
   {
     "name": "Long-Sleeve Thermal Tee",
@@ -309,18 +309,18 @@ const products = [
     "collections": "Winter Essentials",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.4,
+    "numReviews": 18,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/15835619/pexels-photo-15835619.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Long-Sleeve Thermal Tee front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/15835597/pexels-photo-15835597.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Long-Sleeve Thermal Tee detail view"
       }
-    ],
-    "rating": 4.4,
-    "numReviews": 18
+    ]
   },
   {
     "name": "V-Neck Classic T-Shirt",
@@ -345,18 +345,18 @@ const products = [
     "collections": "Basics",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.7,
+    "numReviews": 28,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/3779453/pexels-photo-3779453.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "V-Neck Classic T-Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1170980/pexels-photo-1170980.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "V-Neck Classic T-Shirt detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 28
+    ]
   },
   {
     "name": "Slim Fit Joggers",
@@ -381,18 +381,18 @@ const products = [
     "collections": "Casual Collection",
     "material": "Cotton Blend",
     "gender": "Men",
+    "rating": 4.5,
+    "numReviews": 12,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/9775489/pexels-photo-9775489.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim Fit Joggers front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1506629905607-ef2581f5b166?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/724499/pexels-photo-724499.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim Fit Joggers detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 12
+    ]
   },
   {
     "name": "Cargo Joggers",
@@ -416,18 +416,18 @@ const products = [
     "collections": "Urban Collection",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.7,
+    "numReviews": 20,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1506629905607-ef2581f5b166?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/11478987/pexels-photo-11478987.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Cargo Joggers front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/8453051/pexels-photo-8453051.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Cargo Joggers detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 20
+    ]
   },
   {
     "name": "Tapered Sweatpants",
@@ -452,18 +452,18 @@ const products = [
     "collections": "Lounge Collection",
     "material": "Fleece",
     "gender": "Men",
+    "rating": 4.3,
+    "numReviews": 18,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1018911/pexels-photo-1018911.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Tapered Sweatpants front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7672194/pexels-photo-7672194.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Tapered Sweatpants detail view"
       }
-    ],
-    "rating": 4.3,
-    "numReviews": 18
+    ]
   },
   {
     "name": "Denim Jeans",
@@ -487,18 +487,18 @@ const products = [
     "collections": "Denim Collection",
     "material": "Denim",
     "gender": "Men",
+    "rating": 4.6,
+    "numReviews": 22,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/23947361/pexels-photo-23947361.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Denim Jeans front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/4489707/pexels-photo-4489707.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Denim Jeans detail view"
       }
-    ],
-    "rating": 4.6,
-    "numReviews": 22
+    ]
   },
   {
     "name": "Chino Pants",
@@ -523,18 +523,18 @@ const products = [
     "collections": "Smart Casual Collection",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.8,
+    "numReviews": 15,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/4571832/pexels-photo-4571832.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Chino Pants front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1506629905607-ef2581f5b166?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/663454/pexels-photo-663454.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Chino Pants detail view"
       }
-    ],
-    "rating": 4.8,
-    "numReviews": 15
+    ]
   },
   {
     "name": "Track Pants",
@@ -559,18 +559,18 @@ const products = [
     "collections": "Activewear Collection",
     "material": "Polyester",
     "gender": "Men",
+    "rating": 4.2,
+    "numReviews": 17,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1506629905607-ef2581f5b166?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2890794/pexels-photo-2890794.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Track Pants front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/3819965/pexels-photo-3819965.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Track Pants detail view"
       }
-    ],
-    "rating": 4.2,
-    "numReviews": 17
+    ]
   },
   {
     "name": "Slim Fit Trousers",
@@ -593,18 +593,18 @@ const products = [
     "collections": "Office Wear",
     "material": "Polyester",
     "gender": "Men",
+    "rating": 4.7,
+    "numReviews": 10,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/15606867/pexels-photo-15606867.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim Fit Trousers front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7764014/pexels-photo-7764014.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Slim Fit Trousers detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 10
+    ]
   },
   {
     "name": "Cargo Pants",
@@ -629,18 +629,18 @@ const products = [
     "collections": "Street Style Collection",
     "material": "Cotton",
     "gender": "Men",
+    "rating": 4.5,
+    "numReviews": 13,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/724499/pexels-photo-724499.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Cargo Pants front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/9775489/pexels-photo-9775489.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Cargo Pants detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 13
+    ]
   },
   {
     "name": "Relaxed Fit Sweatpants",
@@ -665,18 +665,18 @@ const products = [
     "collections": "Lounge Collection",
     "material": "Fleece",
     "gender": "Men",
+    "rating": 4.3,
+    "numReviews": 14,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/8453051/pexels-photo-8453051.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Relaxed Fit Sweatpants front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1506629905607-ef2581f5b166?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/11478987/pexels-photo-11478987.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Relaxed Fit Sweatpants detail view"
       }
-    ],
-    "rating": 4.3,
-    "numReviews": 14
+    ]
   },
   {
     "name": "Formal Dress Pants",
@@ -699,18 +699,18 @@ const products = [
     "collections": "Formal Collection",
     "material": "Polyester",
     "gender": "Men",
+    "rating": 4.9,
+    "numReviews": 8,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7672194/pexels-photo-7672194.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Formal Dress Pants front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1018911/pexels-photo-1018911.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Formal Dress Pants detail view"
       }
-    ],
-    "rating": 4.9,
-    "numReviews": 8
+    ]
   },
   {
     "name": "High-Waist Skinny Jeans",
@@ -736,18 +736,18 @@ const products = [
     "collections": "Denim Collection",
     "material": "Denim",
     "gender": "Women",
+    "rating": 4.8,
+    "numReviews": 20,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2750896/pexels-photo-2750896.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "High-Waist Skinny Jeans front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/13666118/pexels-photo-13666118.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "High-Waist Skinny Jeans detail view"
       }
-    ],
-    "rating": 4.8,
-    "numReviews": 20
+    ]
   },
   {
     "name": "Wide-Leg Trousers",
@@ -772,18 +772,18 @@ const products = [
     "collections": "Formal Collection",
     "material": "Polyester",
     "gender": "Women",
+    "rating": 4.7,
+    "numReviews": 15,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/3049731/pexels-photo-3049731.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Wide-Leg Trousers front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/9874909/pexels-photo-9874909.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Wide-Leg Trousers detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 15
+    ]
   },
   {
     "name": "Stretch Leggings",
@@ -808,18 +808,18 @@ const products = [
     "collections": "Activewear Collection",
     "material": "Cotton Blend",
     "gender": "Women",
+    "rating": 4.5,
+    "numReviews": 30,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7746215/pexels-photo-7746215.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Stretch Leggings front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/4100717/pexels-photo-4100717.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Stretch Leggings detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 30
+    ]
   },
   {
     "name": "Pleated Midi Skirt",
@@ -843,18 +843,18 @@ const products = [
     "collections": "Spring Collection",
     "material": "Polyester",
     "gender": "Women",
+    "rating": 4.6,
+    "numReviews": 18,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/8651787/pexels-photo-8651787.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Pleated Midi Skirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/11411683/pexels-photo-11411683.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Pleated Midi Skirt detail view"
       }
-    ],
-    "rating": 4.6,
-    "numReviews": 18
+    ]
   },
   {
     "name": "Flared Palazzo Pants",
@@ -879,18 +879,18 @@ const products = [
     "collections": "Summer Collection",
     "material": "Linen Blend",
     "gender": "Women",
+    "rating": 4.4,
+    "numReviews": 22,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/9241070/pexels-photo-9241070.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Flared Palazzo Pants front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/12846372/pexels-photo-12846372.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Flared Palazzo Pants detail view"
       }
-    ],
-    "rating": 4.4,
-    "numReviews": 22
+    ]
   },
   {
     "name": "High-Rise Joggers",
@@ -915,18 +915,18 @@ const products = [
     "collections": "Loungewear Collection",
     "material": "Cotton Blend",
     "gender": "Women",
+    "rating": 4.3,
+    "numReviews": 25,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/13666118/pexels-photo-13666118.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "High-Rise Joggers front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2750896/pexels-photo-2750896.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "High-Rise Joggers detail view"
       }
-    ],
-    "rating": 4.3,
-    "numReviews": 25
+    ]
   },
   {
     "name": "Paperbag Waist Shorts",
@@ -950,18 +950,18 @@ const products = [
     "collections": "Summer Collection",
     "material": "Cotton",
     "gender": "Women",
+    "rating": 4.5,
+    "numReviews": 19,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/9874909/pexels-photo-9874909.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Paperbag Waist Shorts front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/3049731/pexels-photo-3049731.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Paperbag Waist Shorts detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 19
+    ]
   },
   {
     "name": "Stretch Denim Shorts",
@@ -986,18 +986,18 @@ const products = [
     "collections": "Denim Collection",
     "material": "Denim",
     "gender": "Women",
+    "rating": 4.7,
+    "numReviews": 15,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/4100717/pexels-photo-4100717.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Stretch Denim Shorts front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7746215/pexels-photo-7746215.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Stretch Denim Shorts detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 15
+    ]
   },
   {
     "name": "Culottes",
@@ -1022,18 +1022,18 @@ const products = [
     "collections": "Casual Collection",
     "material": "Polyester",
     "gender": "Women",
+    "rating": 4.6,
+    "numReviews": 23,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/11411683/pexels-photo-11411683.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Culottes front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/8651787/pexels-photo-8651787.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Culottes detail view"
       }
-    ],
-    "rating": 4.6,
-    "numReviews": 23
+    ]
   },
   {
     "name": "Classic Pleated Trousers",
@@ -1058,18 +1058,18 @@ const products = [
     "collections": "Formal Collection",
     "material": "Wool Blend",
     "gender": "Women",
+    "rating": 4.8,
+    "numReviews": 20,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/12846372/pexels-photo-12846372.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Classic Pleated Trousers front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/9241070/pexels-photo-9241070.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Classic Pleated Trousers detail view"
       }
-    ],
-    "rating": 4.8,
-    "numReviews": 20
+    ]
   },
   {
     "name": "Knitted Cropped Top",
@@ -1092,18 +1092,18 @@ const products = [
     "collections": "Knits Collection",
     "material": "Cotton Blend",
     "gender": "Women",
+    "rating": 4.6,
+    "numReviews": 15,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1036620/pexels-photo-1036620.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Knitted Cropped Top front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7319141/pexels-photo-7319141.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Knitted Cropped Top detail view"
       }
-    ],
-    "rating": 4.6,
-    "numReviews": 15
+    ]
   },
   {
     "name": "Boho Floral Blouse",
@@ -1127,18 +1127,18 @@ const products = [
     "collections": "Summer Collection",
     "material": "Viscose",
     "gender": "Women",
+    "rating": 4.7,
+    "numReviews": 20,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Boho Floral Blouse front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/16268823/pexels-photo-16268823.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Boho Floral Blouse detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 20
+    ]
   },
   {
     "name": "Casual T-Shirt",
@@ -1163,18 +1163,18 @@ const products = [
     "collections": "Essentials",
     "material": "Cotton",
     "gender": "Women",
+    "rating": 4.5,
+    "numReviews": 25,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/10512915/pexels-photo-10512915.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Casual T-Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2773977/pexels-photo-2773977.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Casual T-Shirt detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 25
+    ]
   },
   {
     "name": "Off-Shoulder Top",
@@ -1198,18 +1198,18 @@ const products = [
     "collections": "Evening Collection",
     "material": "Polyester",
     "gender": "Women",
+    "rating": 4.7,
+    "numReviews": 18,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2467394/pexels-photo-2467394.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Off-Shoulder Top front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2325367/pexels-photo-2325367.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Off-Shoulder Top detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 18
+    ]
   },
   {
     "name": "Lace-Trimmed Cami Top",
@@ -1232,18 +1232,18 @@ const products = [
     "collections": "Lingerie-Inspired",
     "material": "Silk Blend",
     "gender": "Women",
+    "rating": 4.8,
+    "numReviews": 22,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1122868/pexels-photo-1122868.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Lace-Trimmed Cami Top front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/3052276/pexels-photo-3052276.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Lace-Trimmed Cami Top detail view"
       }
-    ],
-    "rating": 4.8,
-    "numReviews": 22
+    ]
   },
   {
     "name": "Graphic Print Tee",
@@ -1267,18 +1267,18 @@ const products = [
     "collections": "Urban Collection",
     "material": "Cotton",
     "gender": "Women",
+    "rating": 4.6,
+    "numReviews": 30,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1861907/pexels-photo-1861907.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Graphic Print Tee front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/4668932/pexels-photo-4668932.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Graphic Print Tee detail view"
       }
-    ],
-    "rating": 4.6,
-    "numReviews": 30
+    ]
   },
   {
     "name": "Ribbed Long-Sleeve Top",
@@ -1303,18 +1303,18 @@ const products = [
     "collections": "Fall Collection",
     "material": "Cotton Blend",
     "gender": "Women",
+    "rating": 4.7,
+    "numReviews": 26,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/7319141/pexels-photo-7319141.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Ribbed Long-Sleeve Top front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1036620/pexels-photo-1036620.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Ribbed Long-Sleeve Top detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 26
+    ]
   },
   {
     "name": "Ruffle-Sleeve Blouse",
@@ -1338,18 +1338,18 @@ const products = [
     "collections": "Summer Collection",
     "material": "Viscose",
     "gender": "Women",
+    "rating": 4.5,
+    "numReviews": 19,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/16268823/pexels-photo-16268823.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Ruffle-Sleeve Blouse front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Ruffle-Sleeve Blouse detail view"
       }
-    ],
-    "rating": 4.5,
-    "numReviews": 19
+    ]
   },
   {
     "name": "Classic Button-Up Shirt",
@@ -1374,18 +1374,18 @@ const products = [
     "collections": "Office Collection",
     "material": "Cotton",
     "gender": "Women",
+    "rating": 4.8,
+    "numReviews": 25,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2773977/pexels-photo-2773977.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Classic Button-Up Shirt front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/10512915/pexels-photo-10512915.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "Classic Button-Up Shirt detail view"
       }
-    ],
-    "rating": 4.8,
-    "numReviews": 25
+    ]
   },
   {
     "name": "V-Neck Wrap Top",
@@ -1409,18 +1409,19 @@ const products = [
     "collections": "Evening Collection",
     "material": "Polyester",
     "gender": "Women",
+    "rating": 4.7,
+    "numReviews": 22,
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2325367/pexels-photo-2325367.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "V-Neck Wrap Top front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+        "url": "https://images.pexels.com/photos/2467394/pexels-photo-2467394.jpeg?auto=compress&cs=tinysrgb&w=900",
         "altText": "V-Neck Wrap Top detail view"
       }
-    ],
-    "rating": 4.7,
-    "numReviews": 22
+    ]
   }
 ];
+
 module.exports = products;

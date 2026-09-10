@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const Product = require("./Models/Product.js");
 const products = require("./Data/products.js");
+const { getProductImages } = require("./utils/productImages.js");
 
 dotenv.config();
 
@@ -47,20 +48,12 @@ const syncProductImages = async () => {
   let skipped = 0;
 
   for (const [index, product] of products.entries()) {
-    const category = getCategory(product.name);
-    const gender = Array.isArray(product.gender) ? product.gender[0] : product.gender;
-    const pool = imagePools[`${gender}|${category}`];
+    const images = getProductImages(product, index);
 
-    if (!pool) {
+    if (!images.length) {
       skipped += 1;
       continue;
     }
-
-    const pick = (offset) => pool[(index * 3 + offset) % pool.length];
-    const images = [0, 1, 2].map((offset) => ({
-      url: pick(offset),
-      altText: `${product.name} ${offset === 0 ? "front" : offset === 1 ? "detail" : "lifestyle"} view`
-    }));
 
     const result = await Product.updateOne({ sku: product.sku }, { $set: { images } });
     updated += result.matchedCount;

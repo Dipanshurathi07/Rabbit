@@ -157,6 +157,7 @@ const productSlice = createSlice({
     .addCase(fatchProductById.pending,(state)=>{
       state.loading = true;
       state.error = null
+      state.selectedProduct = null;
     })
     .addCase(fatchProductById.fulfilled,(state,action)=>{
       state.loading = false;

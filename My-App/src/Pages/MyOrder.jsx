@@ -64,7 +64,7 @@ const MyOrder = () => {
                   </td>
 
                   <td className="px-4 py-3 font-semibold">
-                    ₹{item.totalPrice}
+                    ${Number(item.totalPrice || 0).toFixed(2)}
                   </td>
 
                   <td className="px-4 py-3">

@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const Product = require("./Models/Product.js");
 const User = require("./Models/User.js");
 const products = require("./Data/products.js");
+const { getProductImages } = require("./utils/productImages.js");
 
 dotenv.config();
 
@@ -14,9 +15,10 @@ const replaceProducts = async () => {
     throw new Error("No user found. Create an admin/user before importing products.");
   }
 
-  const normalizedProducts = products.map((product) => ({
+  const normalizedProducts = products.map((product, index) => ({
     ...product,
     gender: Array.isArray(product.gender) ? product.gender : [product.gender],
+    images: getProductImages(product, index),
     user: owner._id
   }));
 
@@ -25,7 +27,7 @@ const replaceProducts = async () => {
 
   console.log(`Deleted products: ${deleted.deletedCount}`);
   console.log(`Inserted products: ${inserted.length}`);
-  console.log(`Images preserved from Backend/Data/products.js`);
+  console.log(`Images assigned by product title, category, and gender`);
 };
 
 replaceProducts()

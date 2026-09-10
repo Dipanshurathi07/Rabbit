@@ -95,7 +95,7 @@ const handleDec = (item) => {
           </div>
           <div className="flex flex-col items-end gap-3 pr-3">
             <p className="font-medium text-sm sm:text-base">
-              ${item.price}
+              ${Number(item.price || 0).toFixed(2)}
             </p>
             <button onClick={()=>handleDelete(item)} className="text-gray-400 hover:text-red-500 transition">
               <i className="fa-solid fa-trash"></i>
