@@ -37,7 +37,8 @@ const Navbar = () => {
 
         {/* Logo */}
         <div>
-          <Link to="/" className="text-2xl font-extrabold tracking-wide">
+          <Link to="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
+            <img src="/rabit-mark.svg" alt="Rabit logo" className="h-8 w-8" />
             Rabi<span className="text-orange-600">t</span>
           </Link>
         </div>
